@@ -1,4 +1,14 @@
-import random
+' File: dragon.py
+' Author Name: Dwight Dickinson
+' Last Modified By: Dwight Dickinson
+' Date Last Modified: May 19th 2013
+' Revision History
+' 1.0 - May 19th 2013
+' 	- Added comments and header information
+' 	- Removed the randomization
+'	- Changed the print statements for the first decision
+'	- Changed the method names
+
 import time
 
 def displayIntro():
@@ -8,45 +18,51 @@ def displayIntro():
 	print ('is greedy and hungry, and will eat you on sight.')
 	print
 	
-	
 def chooseCave():
 	cave = ''
-	while cave != '1' and cave != '2' and cave != '3':
+	while cave != '1' and cave != '2':
 		print ('Which cave will you go into? (1 or 2)')
 		cave = raw_input()
 	return cave
 
-def checkCave(chosenCave):
+def firstDecision(chosenCave):
+	decision = ''
 	print ('You approach the cave...')
 	time.sleep(2)
 	print ('It is dark and spooky...')
 	time.sleep(2)
-	print ('A large dragon jumps out in front of you! He opens his jaws and...')
+	print ('The exit behind you caves in and you must proceed forward...')
+	
 	print
 	time.sleep(2)
+
+	if chosenCave == '1':
+		print('The cave branches off into two tunnels...')
+		time.sleep(2)
+		print('The left tunnel has a light illuminating from it, and the right has a voice yelling faintly saying HELP...')
+		time.sleep(2)
+		print
+		print('Which tunnel will you choose? (Left, or Right)')
+		decision = raw_input()
+		cave1(decision)
+	elif chosenCave == '2'
+		print('The cave has two holes in the ground...')
+		time.sleep(2)
+		print('The left hole has a ladder for you to climb down, the right appears to be a slide')
+		time.sleep(2)
+		print
+		print('Which hole will you proceed down?')
+		decision = raw_input()
+		cave2(decision)
+
+' These are the decision trees for the second decision
+def cave1(chosenTunnel):
+	print('The ')
 	
-	if (chosenCave == '1'):
-		cave1()
-	elif (chosenCave == '2'):
-		cave2()
-	elif (chosenCave == '3'):
-		cave3()
+def cave2(chosenPath):
+	print('The ')
 	
-	#if chosenCave == str(friendlyCave):
-	#	print ('Gives you his treasure!')
-	#else:
-	#	print ('Gobbles you down in one bite!')
-
-def cave1():
-	print('Gives you his treasure!')
 	
-def cave2():
-	print('Gobbles you down in one bite!')
-
-def cave3():
-	print('Chases you down and burns you with his breath')
-
-
 def main():
 	
 	
@@ -54,7 +70,7 @@ def main():
 	while playAgain == 'yes' or playAgain == 'y':
 		displayIntro()
 		caveNumber = chooseCave()
-		checkCave(caveNumber)
+		firstDecision(caveNumber)
 	
 		print ('Do you want to play again? (yes or no)')
 		playAgain = raw_input()
