@@ -13,6 +13,10 @@
 #	- Added second decision level
 #	- Added new functions for final decision level
 
+# 1.2 - May 21st 2013
+#	- Added second cave decision path
+#	- Added final end-game decision results
+
 import time
 
 def displayIntro():
@@ -95,10 +99,39 @@ def cave2(chosenPath):
 #Light decisions
 def light(runOrStay):
 	if runOrStay.upper() == 'RUN':
-		print('You run
+		print('You run away from the person carrying the torch...')
+		time.sleep(2)
+		print('He yells out a weird demonic phrase...')
+		time.sleep(2)
+		print('The phrase summons a dragon who appears and swallows you whole.')
+		
+	elif runOrStay.upper() == 'STAY':
+		print('You approach the person carrying the torch...')
+		time.sleep(2)
+		print('He disappears in a cloud of dust as you approach him...')
+		time.sleep(2)
+		print('A dragon appears from behind you and sets your body aflame.')
 	
 def fight(runOrFight):
-	
+	if runOrFight.upper() == 'RUN':
+		print('You run in fear from the dragon...')
+		time.sleep(2)
+		print('You make it out of the tunnel only to fall in the hole you saw earlier.')
+		time.sleep(2)
+		print('You land right in another dragons mouth and are swallowed whole')
+		
+	elif runOrFight.upper() == 'FIGHT':
+		print('You draw your swords and prepare for battle...')
+		time.sleep(2)
+		print('The dragon swipes his hand at you, knocking your swords out of your hands')
+		time.sleep(2)
+		print('You draw your bow and set the arrow aflame...')
+		time.sleep(2)
+		print('You shoot the arrow at the dragons head which ignites the whole body...')
+		time.sleep(2)
+		print
+		print
+		print('The dragon falls.... YOU WIN')
 	
 def main():
 	
